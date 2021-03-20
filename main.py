@@ -1,16 +1,15 @@
-# This is a sample Python script.
+import tensorflow as tf
+# You can create constants in TF to hold specific values
+a = tf.constant(1)
+b = tf.constant(2)
+A = tf.constant(1234) 
+# B is a 1-dimensional int32 tensor
+B = tf.constant([123,456,789]) 
+# C is a 2-dimensional int32 tensor
+C = tf.constant([ [123,456,789], [222,333,444] ])
+# Adding and multiplying the constants
+c = a + b
+d = a * b
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(c, "c")
+print(d, "d")
