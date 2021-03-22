@@ -26,7 +26,11 @@ class ProductViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def product_update_view(self, pk=None):
-        pass
+        product = Product.objects.get(id=pk)
+        serializer = ProductSerializer(instance=product, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
     def product_delete_view(self, request, pk=None):
         pass
