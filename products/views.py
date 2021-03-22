@@ -1,5 +1,6 @@
-from rest_framework import viewsets
+from rest_framework import status, viewsets
 from rest_framework.response import Response
+
 from .models import Product
 from .serializers import ProductSerializer
 
@@ -14,7 +15,10 @@ class ProductViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def product_create_view(self, request):
-        pass
+        serializer = ProductSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def product_retrieve_view(self, request, pk=None):
         pass
