@@ -33,4 +33,8 @@ class ProductViewSet(viewsets.ViewSet):
         return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
     def product_delete_view(self, request, pk=None):
-        pass
+        product = Product.objects.get(id=pk)
+        product.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
+    
