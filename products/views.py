@@ -25,7 +25,7 @@ class ProductViewSet(viewsets.ViewSet):
         serializer = ProductSerializer(product)
         return Response(serializer.data)
 
-    def product_update_view(self, pk=None):
+    def product_update_view(self, request, pk=None):
         product = Product.objects.get(id=pk)
         serializer = ProductSerializer(instance=product, data=request.data)
         serializer.is_valid(raise_exception=True)
