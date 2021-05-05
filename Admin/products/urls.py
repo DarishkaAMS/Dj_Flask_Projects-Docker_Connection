@@ -4,12 +4,12 @@ from .views import ProductViewSet
 
 urlpatterns = [
     path('products', ProductViewSet.as_view({
-        'get': 'list',
-        'post': 'create'
+        'get': 'list_view',
+        'post': 'create_view'
     })),
     path('products/<int:pk>', ProductViewSet.as_view({
-        'get': 'retrieve',
-        'put': 'update',
-        'delete': 'delete',
+        'get': 'retrieve_view',
+        'put': 'update_view',
+        'delete': 'delete_view',
     }))
 ]
