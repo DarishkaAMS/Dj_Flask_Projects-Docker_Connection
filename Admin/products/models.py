@@ -7,6 +7,12 @@ class Product(models.Model):
     image = models.CharField(max_length=240)
     likes = models.PositiveIntegerField(default=0)
 
+    def __str__(self):
+        return f"This is my name {self.title}"
 
-class User(models.Model):
-    user = User
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"My mane is {self.user.username}"

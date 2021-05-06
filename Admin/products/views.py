@@ -2,7 +2,7 @@ from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Product, User
+from .models import Product, Profile
 from .serializers import ProductSerializer
 
 import random
@@ -42,7 +42,7 @@ class ProductViewSet(viewsets.ViewSet):
 
 class UserAPIView(APIView):
     def get(self, _):
-        users = User.objects.all()
+        users = Profile.objects.all()
         # user = User.objects.first()
         user = random.choice(users)
         return Response({
