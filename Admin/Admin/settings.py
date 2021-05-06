@@ -29,7 +29,7 @@ SECRET_KEY = '((ff)qoq=!!w*n2vd+hy%xp$8a2#lxgaq)jhmy7y@i(m_)m@qj'
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 
 # Application definition

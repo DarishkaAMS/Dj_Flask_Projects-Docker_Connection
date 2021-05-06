@@ -1,6 +1,5 @@
 from django.db import models
-
-# Create your models here.
+from django.contrib.auth.models import User
 
 
 class Product(models.Model):
@@ -10,4 +9,4 @@ class Product(models.Model):
 
 
 class User(models.Model):
-    pass
+    user = User
